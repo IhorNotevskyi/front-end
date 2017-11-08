@@ -1,0 +1,40 @@
+#calculator * {
+    font: 18px Arial, sans-serif;
+}
+
+#calculator table {
+    width: 185px;
+    border: 1px solid #1b88dc;
+    border-spacing: 3px;
+    background: #ededed;
+    box-shadow: 1px 6px 55px -12px rgba(0, 0, 0, .75);
+}
+
+#calculator table tr td {
+    border-spacing: 3px;
+    padding: 2px;
+}
+
+.display {
+    width: 164px;
+    height: 32px;
+    padding: 0 3px;
+    text-align: right;
+}
+
+input[type=button] {
+    width: 40px;
+    height: 40px;
+}
+
+p {
+    width: 174px;
+    text-align: center;
+    background: #34a6ff;
+    margin: 0 0 4px 0;
+    padding: 4px 0;
+}
+
+::placeholder {
+    color: #000;
+}

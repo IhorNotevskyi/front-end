@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    margin: auto;
+    background: #fff;
+    font: 14px Arial, sans-serif;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #4169e1;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+    color: #f00;
+    cursor: pointer;
+}
+.items{
+    width: 100%;
+    margin: 40px;
+}
+.item{
+    float: left;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    margin: 1px;
+    width: 280px;
+    height: 450px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.item-info{
+    position: absolute;
+    width: 302px;
+    height: 640px;
+    left: -20px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: none;
+    overflow: hidden;
+    border: 1px solid #3eb1cc;
+    margin: -10px 0 30px -3px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 0 14px -1px rgba(0,0,0,0.75);
+}
+.item:hover .item-info{
+    display: block;
+    z-index: 10;
+}
+.item-img img{
+    display: block;
+    width: 86%;
+    margin: auto;
+}
+.surprises{
+    position: absolute;
+    top: 7px;
+    left: 6px;
+}
+.surprises img{
+    width: 80%;
+}
+.credit{
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #fb515d;
+    width: 61px;
+    height: 63px;
+    position: absolute;
+    top: 140px;
+}
+.credit .gift{
+    font-size: 9.5px;
+    color: #fff;
+    background: #fb515d;
+    text-align: center;
+}
+.credit-min{
+    margin-left: 4px;
+}
+.stock{
+    padding: 3px 0;
+    background: rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 210px;
+}
+.link-stock{
+    font-size: 12px;
+    color: #fb515d;
+}
+.link-stock:hover{
+    text-decoration: none;
+    border-bottom: 1px dotted #fb515d;
+
+}
+.link-big{
+    font-size: 16px;
+}
+.promo-stock {
+    color: #1092f4;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border: 1px solid #88bdd8;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1em;
+    line-height: 16px;
+    text-align: center;
+}
+.promo-stock:hover {
+    color: #fc6c76;
+    border: 1px solid #ffb4ab;
+    text-decoration: none;
+}
+.item-description{
+    width: 100%;
+
+}
+.make{
+    margin-top: 5px;
+}
+.make-marks{
+    margin-top: 20px;
+}
+.make-promo{
+    margin-top: 40px;
+}
+.ends{
+    color: #fe6600;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 11px;
+}
+.price{
+    margin-top: 10px;
+}
+.small{
+    font-size: 12px;
+}
+.price-pink{
+    font-size: 20px;
+    padding: 5px;
+    background: #fff3b5;
+    border: 1px solid #fff3b5;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.price-grey{
+    display: block;
+    font-size: 20px;
+    padding: 0 5px 5px;
+    color: #999;
+}
+.price-grey img{
+    width: 73px;
+    padding-bottom: 5px;
+    margin-left: -73px;
+}
+.price-orange{
+    background: #ffce3c;
+    border: 1px solid #ffbf01;
+}
+.pink{
+    color: #fb515d;
+}
+.buy{
+    margin-top: 20px;
+    position: relative;
+}
+.promo-price{
+    margin-top: 15px;
+}
+.clear{
+    clear: both;
+    margin-bottom: 40px;
+}
+
+/* Drop-down box */
+
+.add-info{
+    margin: 70px 0 15px;
+}
+.add-info img{
+    padding-right: 5px;
+}
+.info-padding{
+    padding-left: 10px;!important;
+}
+.buy .info-heart:hover, .buy .info-libra:hover{
+    border: 1px solid #fb515d;
+    border-radius: 5px;
+}
+.button{
+    width: 115px;
+    height: 40px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    text-decoration:none;
+    text-align:center;
+    border:solid 1px #2fd64e;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius: 3px;
+    font:16px Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#26b50d;
+    background-image: -moz-linear-gradient(top, #26b50d 0%, #23b019 100%);
+    background-image: -webkit-linear-gradient(top, #26b50d 0%, #23b019 100%);
+    background-image: -o-linear-gradient(top, #26b50d 0%, #23b019 100%);
+    background-image: -ms-linear-gradient(top, #26b50d 0% ,#23b019 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23b019', endColorstr='#23b019',GradientType=0 );
+    background-image: linear-gradient(top, #26b50d 0% ,#23b019 100%);
+    -webkit-box-shadow:4px 2px 5px #ace0ac, inset 0px -3px 0px #2a6b49;
+    -moz-box-shadow: 4px 2px 5px #ace0ac,  inset 0px -3px 0px #2a6b49;
+    box-shadow:4px 2px 5px #ace0ac, inset 0px -3px 0px #2a6b49;
+    opacity:0.81;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=81);
+    filter: alpha(opacity=81);
+    -webkit-transition: color 0.05s ease-in;
+    -moz-transition:  color 0.05s ease-in;
+    -o-transition:  color 0.05s ease-in;
+    transition:  color 0.05s ease-in;
+}
+.button:hover{
+    padding:10px 38px;
+    border:solid 1px #2fd64e;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius: 3px;
+    font:15px Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#1bd121;
+    background-image: -moz-linear-gradient(top, #1bd121 0%, #2be61e 100%);
+    background-image: -webkit-linear-gradient(top, #1bd121 0%, #2be61e 100%);
+    background-image: -o-linear-gradient(top, #1bd121 0%, #2be61e 100%);
+    background-image: -ms-linear-gradient(top, #1bd121 0% ,#2be61e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2be61e', endColorstr='#2be61e',GradientType=0 );
+    background-image: linear-gradient(top, #1bd121 0% ,#2be61e 100%);
+    -webkit-box-shadow:4px 2px 5px #ace0ac, inset 0px -3px 0px #0bd618;
+    -moz-box-shadow: 4px 2px 5px #ace0ac,  inset 0px -3px 0px #0bd618;
+    box-shadow:4px 2px 5px #ace0ac, inset 0px -3px 0px #0bd618;
+    opacity:0.81;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=81);
+    filter: alpha(opacity=81);
+    text-shadow: 1px 0px 0px #bababa;
+    filter: dropshadow(color=#bababa, offx=1, offy=0);
+}
+
+.button img{
+    width: 38px;
+    position: absolute;
+    left:5px;
+    top: 1px;
+}
+.button span{
+    position: absolute;
+    left: 43px;
+    top: 9px;
+}
+.info-heart{
+    position: absolute;
+    top: -1px;
+    left: 121px;
+}
+.info-libra{
+    position: absolute;
+    top: -1px;
+    left: 175px;
+}
+.buy .button:hover{
+    border: 0;
+}
+.buy .button:hover{
+    color: #fff;
+}
+.item-info .stock{
+    padding: 3px 0;
+    background: rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 228px;
+}
