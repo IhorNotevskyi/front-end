@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>5</title>
+    </head>
+    <body>
+        <form action="" onsubmit="onSubmit()">
+            <label for="on">Введите число</label><br>
+            <input type="number" id="on" required="required">
+            <input type="submit" value="Отправить">
+        </form>
+        <script>
+
+            function onSubmit()
+            {
+                var x = document.getElementById('on').value;
+                var max = 10;
+                var min = 0;
+                var arr = [];
+
+                for (var i = 1; i <= max; i++) {
+                    var number =  Math.floor(Math.random() * (max - min + 1)) + min;
+                    arr.push(number);
+                }
+
+                document.write(arr + '<br><br>');
+
+                function findNumber(ourArr, number)
+                {
+                    for (var j = 0; j < ourArr.length; j++) {
+                        if (ourArr[j] == number) {
+                            return 'Массив СОДЕРЖИТ число ' + x;
+                        }
+                    }
+
+                    return 'Массив НЕ СОДЕРЖИТ число ' + x;
+                }
+
+                document.write(findNumber(arr, x));
+            }
+
+        </script>
+    </body>
+</html>

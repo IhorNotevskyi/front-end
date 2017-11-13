@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>10</title>
+    </head>
+    <body>
+        <script>
+
+            (function ()
+            {
+                var size = 5;
+                var max = 9;
+                var min = 0;
+                var arr = [];
+                var newArr = [size * 2];
+
+                for (var i = 0; i < size; i++) {
+                    arr[i] = [];
+
+                    for (var j = 0; j < size; j++) {
+                        var number = Math.floor(Math.random() * (max - min + 1)) + min;
+                        arr[i][j] = number;
+
+                        if (i == j) {
+                            newArr[i] = number;
+                        }
+                        if (i + j == size - 1) {
+                            newArr[2 * size - 1 - j] = number;
+                        }
+                    }
+                }
+
+                console.log(arr);
+                console.log(newArr);
+
+            })();
+
+        </script>
+    </body>
+</html>
