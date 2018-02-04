@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Key combination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 50px 100px;
+            background: #e9e8ff;
+            font-size: 16px;
+        }
+
+        p {
+            text-indent: 30px;
+            text-align: justify;
+            line-height: 20px;
+            margin-top: 15px;
+        }
+
+        p:first-letter {
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', init, false);
+
+        function init() {
+            document.addEventListener('keydown', keyF, false);
+
+            function keyF(e) {
+                if (e.code === 'KeyS' && e.shiftKey && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                    swal({title: 'Сохранено всё', icon: 'success', button: 'ОК'});
+                } else if (e.code === 'KeyS' && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                    swal({title: 'Сохранено', icon: 'success', button: 'ОК'});
+                } else if (e.code === 'KeyA' && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                    swal({title: 'Выбрано всё', icon: 'success', button: 'ОК'});
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at cupiditate eligendi error est laboriosam, nostrum officia omnis quisquam quos recusandae sequi ullam. Accusamus, amet, aspernatur corporis distinctio dolore harum illum incidunt molestiae nesciunt non obcaecati quam quis similique ut voluptatibus. Accusamus ad cupiditate deserunt dolores ducimus eius ex facilis id ipsum itaque molestiae nobis obcaecati odit omnis optio pariatur qui, quibusdam quis recusandae sapiente sint, suscipit temporibus velit veniam veritatis! Ab adipisci aliquid, animi debitis delectus dolores dolorum in itaque labore magni natus nesciunt nisi odit quisquam recusandae reiciendis sapiente ut. Deserunt esse ex expedita iste perferendis quae.</p>
+</body>
+</html>

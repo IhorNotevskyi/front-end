@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>AmountGET</title>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+        body {
+            margin: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            background: #5dd25d;
+        }
+
+        input {
+            background: #a48ce3;
+            margin-top: 20px;
+        }
+
+        a, input {
+            border: 1px solid #000;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 2px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        p {
+            font: 600 20px 'Merriweather', serif;
+            text-shadow: 2px 4px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+        }
+    </style>
+    <script>
+        function getQueryString() {
+            var args = {};
+            var query = location.search.substring(1);
+            var pairs = query.split("&");
+
+            for (var i = 0; i < pairs.length; i++) {
+                var pos = pairs[i].indexOf('=');
+
+                if (pos == -1) {
+                    continue;
+                }
+
+                var argname = pairs[i].substring(0, pos);
+                var value = pairs[i].substring(pos + 1);
+
+                args[argname] = value;
+            }
+
+            return args;
+        }
+
+        function print() {
+            var args = getQueryString();
+            var e = document.createElement("p");
+
+            var a = parseInt(args.a, 10);
+            var b = parseInt(args.b, 10);
+            var sum = a + b;
+
+            e.innerHTML = "сумма " + sum;
+            document.body.appendChild(e);
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript: window.history.pushState(null, null, '?a=100&b=200');">Добавить GET параметры к URL</a><br>
+    <input type="button" name="name" value="Вывод суммы GET параметров" onclick="print();">
+</body>
+</html>

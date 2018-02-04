@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>Arithmetic</title>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+        body {
+            margin: 30px;
+        }
+
+        p {
+           font: 600 20px 'Merriweather', serif;
+        }
+
+        label {
+            font: 500 27px 'Merriweather', serif;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.5), 0 0 8px #fffae8;
+        }
+
+        input[type="text"] {
+            font: 600 20px 'Merriweather', serif;
+            line-height: 20px;
+            padding: 10px 30px;
+            width: 100px;
+            border-radius: 10px;
+            outline: none;
+            margin-right: 20px;
+            border: 3px solid #008000;
+            text-align: center;
+        }
+
+        input[type="button"] {
+            display: inline-block;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            min-width: 100px;
+            padding: 22px 33px;
+            font-family: 'Lobster', cursive;
+            font-size: 26px;
+            line-height: 26px;
+            text-decoration: none;
+            color: #FFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+            background: #5e0d0c;
+            outline: none;
+            border-radius: 15px;
+            border: 1px solid #4c0300;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #a23227, /* inner glow */
+                    inset 0 80px 80px -40px #ac3223, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+            position: relative;
+            overflow: visible; /* IE9 & 10 */
+            -webkit-transition: 500ms linear;
+            -moz-transition: 500ms linear;
+            -o-transition: 500ms linear;
+            transition: 500ms linear;
+        }
+
+        input[type="button"]::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -7px;
+            left: -3px;
+            right: 0;
+            height: 23px;
+        }
+
+        input[type="button"]:hover {
+            background: #a61715;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.75), 0 0 40px #FFF;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #da3b2c, /* inner glow */
+                    inset 0 80px 80px -40px #dd4330, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+        }
+
+        input[type="button"]:focus {
+            outline: none; /*FF*/
+        }
+
+        input[type="button"]:active {
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #da3b2c, /* inner glow */
+                    inset 0 80px 80px -40px #dd4330, /* gradient */
+                    0px 1px 0px rgba(255,255,255,0.25); /* shadow */
+
+            -webkit-transition: 50ms linear;
+            -moz-transition: 50ms linear;
+            -o-transition: 50ms linear;
+            transition: 50ms linear;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+
+            document.getElementById("button").onclick = function() {
+
+                var value = document.getElementById("input").value;
+
+                var pattern = /^[+|-]?\d+ [+|\-|*|/] [+|-]?\d+$/;
+
+                if (pattern.test(value)) {
+
+                    var operands = value.split(" ");
+                    var a = parseInt(operands[0]);
+                    var b = parseInt(operands[2]);
+                    var c = operands[1];
+                    var result;
+
+                    function createParagraph() {
+                        var e = document.createElement("p");
+                        e.innerHTML = value + " = " + result;
+                        e.style.color = "#00f";
+                        document.body.appendChild(e);
+                    }
+
+                    if (c == "+") {
+                        result = a + b;
+                        createParagraph();
+                    } else if (c == "-") {
+                        result = a - b;
+                        createParagraph();
+                    } else if (c == "*") {
+                        result = a * b;
+                        createParagraph();
+                    } else if (c == "/") {
+                        result = a / b;
+                        createParagraph();
+                    }
+                } else {
+                    var e = document.createElement("p");
+                    e.innerHTML = "Данные введены неверно";
+                    e.style.color = "#f00";
+                    document.body.appendChild(e);
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <form>
+        <label for="input">Enter action</label><br>
+        <input type="text" id="input">
+        <input type="button" id="button" value="Let's GO!">
+    </form>
+</body>
+</html>

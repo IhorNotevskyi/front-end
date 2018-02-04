@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>JSLessons</title>
+    <style>
+        a {
+            display: block;
+            text-decoration: none;
+            margin: 30px;
+            font-size: 20px;
+            transition: all .5s ease;
+        }
+        a:hover {
+            color: #00ba00;
+            font-size: 22px;
+            transition: all .5s ease;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var link1 = document.getElementById("link1");
+            var link2 = document.getElementById("link2");
+            var link3 = document.getElementById("link3");
+
+            link1.innerHTML = "JS Урок 1";
+            link2.innerHTML = "JS Урок 2";
+            link3.innerHTML = "JS Урок 3";
+
+            var newLink1;
+
+            link1.onclick = function ModLink() {
+                if (!newLink1 || newLink1.opener == null) {
+                    this.innerHTML += " (открыт)";
+                    newLink1 = window.open("links/link1.html", "link1");
+                }
+                else {
+                    this.innerHTML = this.innerHTML.substr(0, this.innerHTML.length - 9);
+                    newLink1.close();
+                }
+            };
+
+            var newLink2;
+
+            link2.onclick = function ModLink() {
+                if (!newLink2 || newLink2.opener == null) {
+                    this.innerHTML += " (открыт)";
+                    newLink2 = window.open("links/link2.html", "link2");
+                }
+                else {
+                    this.innerHTML = this.innerHTML.substr(0, this.innerHTML.length - 9);
+                    newLink2.close();
+                }
+            };
+
+            var newLink3;
+
+            link3.onclick = function ModLink() {
+                if (!newLink3 || newLink3.opener == null) {
+                    this.innerHTML += " (открыт)";
+                    newLink3 = window.open("links/link3.html", "link3");
+                }
+                else {
+                    this.innerHTML = this.innerHTML.substr(0, this.innerHTML.length - 9);
+                    newLink3.close();
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <a id="link1" href="#"></a>
+    <a id="link2" href="#"></a>
+    <a id="link3" href="#"></a>
+</body>
+</html>

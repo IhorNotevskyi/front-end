@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running button</title>
+    <style>
+        body {
+            background: #daccff;
+        }
+
+        a {
+            transition: all 0.1s;
+            -webkit-transition: all 0.1s;
+            position: relative;
+            padding: 10px 40px;
+            margin: 0px 10px 10px 0px;
+            float: left;
+            border-radius: 10px;
+            font-family: 'Pacifico', cursive;
+            font-size: 25px;
+            color: #FFF;
+            text-decoration: none;
+            background-color: #E74C3C;
+            border-bottom: 5px solid #BD3E31;
+            text-shadow: 0px -2px #BD3E31;
+        }
+
+        a:active {
+            transform: translate(0px,5px);
+            -webkit-transform: translate(0px,5px);
+            border-bottom: 1px solid;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', init, false);
+
+        function init() {
+            var myButton = document.getElementById('myButton');
+
+            myButton.addEventListener('mousemove', moveButton, false);
+
+            function moveButton() {
+                myButton.style.left = 1 - 0.5 + Math.random() * ((window.screen.availWidth - 75) - 1 + 1) + 'px';
+                myButton.style.top = 1 - 0.5 + Math.random() * ((window.screen.availHeight - 75) - 1 + 1) + 'px';
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="" id="myButton">Получить скидку</a>
+</body>
+</html>

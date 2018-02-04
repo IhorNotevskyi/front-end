@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <title>Paragraphs</title>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+        body {
+            margin: 30px;
+            font: 600 20px 'Merriweather', serif;
+        }
+
+        h3 {
+            color: #348031;
+        }
+
+        p {
+            color: #870fff;
+        }
+
+        button {
+            font: 600 20px 'Merriweather', serif;
+            line-height: 20px;
+            padding: 10px 30px;
+            width: 100px;
+            border-radius: 10px;
+            outline: none;
+            margin-right: 20px;
+            border: 3px solid #008000;
+            text-align: center;
+        }
+
+        button {
+            display: inline-block;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            min-width: 300px;
+            padding: 22px 33px;
+            font-family: 'Lobster', cursive;
+            font-size: 26px;
+            line-height: 26px;
+            text-decoration: none;
+            color: #FFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+            background: #5e0d0c;
+            outline: none;
+            border-radius: 15px;
+            border: 1px solid #4c0300;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #a23227, /* inner glow */
+                    inset 0 80px 80px -40px #ac3223, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+            position: relative;
+            overflow: visible; /* IE9 & 10 */
+            -webkit-transition: 500ms linear;
+            -moz-transition: 500ms linear;
+            -o-transition: 500ms linear;
+            transition: 500ms linear;
+        }
+
+        button::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -7px;
+            left: -3px;
+            right: 0;
+            height: 23px;
+        }
+
+        button:hover {
+            background: #a61715;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.75), 0 0 40px #FFF;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #da3b2c, /* inner glow */
+                    inset 0 80px 80px -40px #dd4330, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+        }
+
+        button:focus {
+            outline: none; /*FF*/
+        }
+
+        button:active {
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #da3b2c, /* inner glow */
+                    inset 0 80px 80px -40px #dd4330, /* gradient */
+                    0px 1px 0px rgba(255,255,255,0.25); /* shadow */
+
+            -webkit-transition: 50ms linear;
+            -moz-transition: 50ms linear;
+            -o-transition: 50ms linear;
+            transition: 50ms linear;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+
+            document.getElementById("button").onclick = function () {
+
+                for (var i = 1; i <= 10; i++) {
+                    var e = document.createElement("p");
+                    e.innerHTML = "Параграф " + i;
+                    document.body.appendChild(e);
+                }
+
+                var paragraphs = document.getElementsByTagName("p");
+
+                var result = [];
+
+                for (var j = 0; j < paragraphs.length; j++) {
+                    if (j > 1 && j < 6) {
+                        result.push(paragraphs[j]);
+                    }
+                }
+
+                console.log(result);
+
+                for (var y = 0; y < result.length; y++) {
+                    console.log(result[y]);
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h3>Результат смотреть в консоли после нажатия кнопки</h3>
+    <button id="button">Создать 10 параграфов</button>
+</body>
+</html>

@@ -1,0 +1,314 @@
+@import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font: 16px 'Merriweather', Arial, sans-serif;
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+**********HEADER**********
+*/
+
+header {
+    width: 100%;
+    min-height: 649px;
+    background: fixed #929292 url('../img/header.jpg') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+}
+
+header span,
+header nav a,
+header h1,
+header h2 {
+    color: #fefefe;
+}
+
+header span,
+header nav {
+    flex-basis: 30%;
+    padding-top: 35px;
+}
+
+header span {
+    font-size: 25px;
+}
+
+header div {
+    flex-basis: 40%;
+    align-self: center;
+}
+
+header div h1 {
+    font-size: 60px;
+    letter-spacing: 7px;
+}
+
+header div h2 {
+    font-size: 30px;
+    font-weight: 400;
+    font-style: italic;
+    padding-top: 30px;
+    letter-spacing: 2px;
+}
+
+header nav a {
+    padding: 10px 15px;
+}
+
+header nav a:hover{
+    border-bottom: 2px solid #fefefe;
+}
+
+/*
+**********ABOUT**********
+*/
+
+section.about {
+    padding: 60px 0 70px;
+    border-bottom: 1px solid #ccc;
+}
+
+section.about .ambition {
+     display: flex;
+     justify-content: center;
+}
+
+section.about h3 {
+    margin-bottom: 50px;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+section.about h4 {
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+section.about img {
+    margin-top: 50px;
+}
+
+section.about .goals {
+    text-align: right;
+    flex-basis: 20%;
+}
+
+section.about .dreams {
+    text-align: left;
+    flex-basis: 20%;
+}
+
+section.about .person {
+    flex-basis: 20%;
+}
+
+/*
+**********SKILLS**********
+*/
+
+section.skills {
+    padding: 40px 0 70px;
+    border-bottom: 1px solid #ccc;
+}
+
+section.skills h3 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+section.skills .front-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.skills .language,
+section.skills .level {
+    align-self: center;
+    flex-basis: 30%;
+}
+
+section.skills .language {
+    text-align: right;
+    padding-right: 60px;
+    font-size: 35px;
+}
+
+section.skills .language h5 {
+    padding-top: 18px;
+    letter-spacing: 2px;
+}
+
+section.skills .level {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 35px;
+}
+
+section.skills .level span.circles {
+    display: block;
+    padding-top: 10px;
+    letter-spacing: 2px;
+}
+
+section.skills span.black {
+    color: #333;
+}
+
+section.skills span.grey {
+    color: #9c9a9a;
+}
+
+/*
+**********CONTACT**********
+*/
+
+section.contact {
+    padding: 30px 0;
+}
+
+section.contact h3 {
+    margin-bottom: 60px;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+section.contact p.warning {
+    color: #f00;
+    visibility: hidden;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+section.contact form {
+    display: flex;
+    justify-content: center;
+}
+
+section.contact .information {
+    flex-basis: 17%;
+    text-align: left;
+}
+
+section.contact .fields {
+    flex-basis: 32%;
+}
+
+form label,
+form span,
+form input,
+form textarea {
+    display: block;
+}
+
+form label {
+    margin-bottom: 7px;
+}
+
+form span {
+    margin-bottom: 20px;
+    color: #b0b0b0;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 9px 7px;
+    margin-bottom: 26px;
+    border: 1px solid #808080;
+    font-size: 16px;
+}
+
+form textarea {
+    height: 25%;
+    line-height: 20px;
+    font: 16px Arial, sans-serif;
+    overflow: auto;
+    resize: none;
+}
+
+form input[type="submit"] {
+    background: #333;
+    color: #fefefe;
+    padding: 7px;
+    letter-spacing: 1px;
+    width: 35%;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+}
+
+form input[type="submit"]:hover {
+    cursor: pointer;
+    transition: .2s ease;
+    text-shadow: 0 0 1px rgba(255,255,255,1);
+    box-shadow: 1px 3px 5px 1px rgba(66, 66, 66, 0.75);
+}
+
+form input[type="submit"]:active {
+    cursor: pointer;
+    width: 36%;
+    background: #505050;
+    transition: all .5s ease-in-out;
+    transform: scale(1.1,1.1);
+    text-shadow: 1px 1px 2px rgb(214, 214, 214);
+    box-shadow: 1px 3px 15px 1px rgba(39, 39, 39, 0.75);
+}
+
+/*
+**********FOOTER**********
+*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    color: #fefefe;
+    height: 200px;
+}
+
+footer span {
+    display: block;
+    padding-bottom: 7px;
+}
+
+footer div {
+    align-self: center;
+    flex-basis: 30%;
+}
+
+footer .data {
+    text-align: left;
+}
+
+footer .some {
+    text-align: right;
+    font-size: 50px;
+}
+
+footer .some a img:hover {
+    transform: scale(1.2);
+    transition: .2s ease;
+}

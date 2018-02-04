@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 50px;
+            background: #e9e8ff;
+            font-size: 16px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-indent: 30px;
+            text-align: justify;
+            line-height: 20px;
+            margin-top: 15px;
+        }
+
+        p:first-letter {
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', init, false);
+
+        function init() {
+            var wrap = document.getElementById('wrap');
+
+            document.addEventListener('keypress', key, false);
+
+            function key(e) {
+                if (e.code === 'KeyR') {
+                    wrap.style.color = 'red';
+                } else if (e.code === 'KeyG') {
+                        wrap.style.color = 'green';
+                } else if (e.code === 'KeyB') {
+                    wrap.style.color = 'blue';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Korem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat maxime minima obcaecati odio quam qui quisquam similique sit voluptatum. Commodi culpa ducimus fugit impedit magnam molestias voluptas! Aliquam cum deserunt molestiae nulla, officia rerum? Aliquam cum ea ex facere ipsam molestias neque nulla odio porro, quidem, quisquam ratione rerum ut vel voluptatum. Dicta dignissimos, excepturi fugit in iure iusto laboriosam magnam nam neque, rem repellendus rerum soluta temporibus? Cumque dolores ex impedit natus nulla provident quis ratione rerum. Ad aliquid ducimus enim impedit odit porro quae, velit. Aliquam architecto blanditiis corporis eligendi enim illum, in quod, vel veritatis vitae voluptate?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusamus alias animi at aut, autem beatae commodi consequuntur eum ex exercitationem, explicabo facilis fuga fugiat impedit incidunt ipsam labore laboriosam laborum magnam maxime mollitia nesciunt odit officia pariatur, perferendis quam reprehenderit sapiente sint soluta unde voluptas voluptates. Animi asperiores blanditiis consectetur dolorem dolores doloribus ea et eveniet, illo laborum libero nesciunt omnis, quam ratione rem, repellat sequi tempora voluptatum?</p>
+        <p>Morem ipsum dolor sit amet, consectetur adipisicing elit. A animi, consequatur consequuntur debitis delectus dolor eaque earum excepturi fuga fugiat ipsum, iure labore maiores modi natus nesciunt nulla porro qui quo ratione repellendus saepe tempora tenetur ullam voluptatibus. Assumenda consequatur culpa dicta eligendi molestias nisi quas sapiente sunt! Accusantium animi aspernatur aut autem commodi, corporis dicta distinctio ducimus eaque earum eos harum inventore ipsa, ipsam iste molestias nam officiis optio possimus quam quis ratione repellendus saepe sed vero. Adipisci cum cumque ea iste labore laborum, maxime modi optio perspiciatis quaerat quas repudiandae sint soluta tempora ullam? Aperiam eius fuga inventore maxime modi neque officia reiciendis sint voluptates voluptatibus. Explicabo ipsam minima necessitatibus, nulla placeat praesentium quibusdam reiciendis sunt. Laudantium, velit!</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>Ticker</title>
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Merriweather';
+
+        body {
+            margin: 30px;
+        }
+
+        hr {
+            padding: 10px 0;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #a23227, /* inner glow */
+                    inset 0 80px 80px -40px #9f357f, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+        }
+
+        span {
+            color: #6e0dbb;
+            margin-top: 40px;
+            line-height: 150%;
+            font: 600 40px 'Merriweather', serif;
+            text-shadow: 1px 1px 14px rgba(0,0,0,0.5), 0 0 8px #fffae8;
+        }
+
+        input {
+            font: 600 20px 'Merriweather', serif;
+            line-height: 20px;
+            padding: 10px 30px;
+            width: 100px;
+            border-radius: 10px;
+            outline: none;
+            margin-right: 20px;
+            border: 3px solid #008000;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            min-width: 100px;
+            padding: 22px 33px;
+            font-family: 'Lobster', cursive;
+            font-size: 26px;
+            line-height: 26px;
+            text-decoration: none;
+            color: #FFF;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+            background: #5e0d0c;
+            outline: none;
+            border-radius: 15px;
+            border: 1px solid #4c0300;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #a23227, /* inner glow */
+                    inset 0 80px 80px -40px #ac3223, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+            position: relative;
+            overflow: visible; /* IE9 & 10 */
+            -webkit-transition: 500ms linear;
+            -moz-transition: 500ms linear;
+            -o-transition: 500ms linear;
+            transition: 500ms linear;
+        }
+
+        a::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -7px;
+            left: -3px;
+            right: 0;
+            height: 23px;
+        }
+
+        a:hover {
+            background: #a61715;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.75), 0 0 40px #FFF;
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #da3b2c, /* inner glow */
+                    inset 0 80px 80px -40px #dd4330, /* gradient */
+                    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+        }
+
+        a:focus {
+            outline: none; /*FF*/
+        }
+
+        a:active {
+            box-shadow:
+                    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+                    inset 0 0 6px #da3b2c, /* inner glow */
+                    inset 0 80px 80px -40px #dd4330, /* gradient */
+                    0px 1px 0px rgba(255,255,255,0.25); /* shadow */
+
+            -webkit-transition: 50ms linear;
+            -moz-transition: 50ms linear;
+            -o-transition: 50ms linear;
+            transition: 50ms linear;
+        }
+    </style>
+</head>
+<body>
+    <span id="ticker"></span>
+    <hr>
+    <input name="text" type="text" id="text">
+    <a href="javascript: text()">Let's GO!</a>
+    <script>
+        var line = '',
+            speedPrint = 200,
+            speedTicker = 20,
+            i = 0,
+            l = 0,
+            back = false,
+            ticker = document.getElementById('ticker'),
+            input = document.getElementById('text'),
+
+            end = function() {
+                w = document.body.clientWidth;
+                ticker.style.position = 'relative';
+                if (!back && l < w) {
+                    l += 5;
+                    ticker.style.left = l + 'px';
+                } else {
+                    if (0 === l || 0 > l) {
+                        l = 0;
+                        back = false;
+                        ticker.style.left = '0px';
+                    } else {
+                        back = true;
+                        l -= 5;
+                        ticker.style.left = l + 'px';
+                    }
+                }
+
+                setTimeout(end, speedTicker);
+            },
+
+            text = function() {
+                if (!(line = input.value)) {
+                    input.focus();
+                    return;
+                }
+                setTimeout(run, 200);
+            },
+
+            run = function() {
+                if (i < line.length) {
+                    i++;
+                    ticker.innerText = line.substring(0, i);
+                    setTimeout(run, speedPrint);
+                } else {
+                    end();
+                }
+            };
+    </script>
+</body>
+</html>

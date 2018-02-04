@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <script>
+        window.onload = function () {
+            (function () {
+
+                var size = 5;
+                var max = 5;
+                var min = -5;
+                var arr = [];
+                var newArr = [];
+
+                for (var i = 0; i < size; i++) {
+                    arr[i] = [];
+                    newArr[i] = [];
+
+                    for (var j = 0; j < size; j++) {
+                        var number = Math.floor(Math.random() * (max - min + 1)) + min;
+                        arr[i][j] = number;
+                        newArr[i][j] = number;
+                    }
+                }
+
+                for (var x = 0; x < newArr.length; x++) {
+                    for (var y = 0; y < newArr[x].length; y++) {
+                        if (x === y) {
+                            if (newArr[x][y] < 0) {
+                                newArr[x][y] = 0;
+                            } else {
+                                newArr[x][y] = 1;
+                            }
+                        }
+                    }
+                }
+
+                console.log(arr);
+                console.log(newArr);
+            })();
+        };
+    </script>
+</head>
+<body>
+    <h2>Результат смотреть в консоли</h2>
+</body>
+</html>

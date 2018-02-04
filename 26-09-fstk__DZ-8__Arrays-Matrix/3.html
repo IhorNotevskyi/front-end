@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+<script>
+
+    var max = 100;
+    var min = -100;
+    var size = 20;
+    var arr = [];
+
+    for (var i = 1; i <= size; i++) {
+        var number = Math.floor(Math.random() * (max - min + 1)) + min;
+        arr.push(number);
+    }
+
+    function arrSort(arr) {
+        var len = arr.length;
+
+        for (var i = 0; i < len - 1; i++) {
+            for (var j = 0; j < len - 1 - i; j++) {
+                if (arr[j + 1] < arr[j]) {
+                    var el = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = el;
+                }
+            }
+        }
+
+        return arr;
+    }
+
+    function arraySort(arr) {
+        var len = arr.length;
+
+        for (var i = 0; i < len; i++) {
+            var el = arr[i];
+            var j = i - 1;
+
+            while (j >= 0 && arr[j] > el) {
+                arr[j+1] = arr[j];
+                j--;
+            }
+
+            arr[j + 1] = el;
+        }
+
+        return arr;
+    }
+
+    document.write('Исходный массив: ' + ' [' + arr + ']' + '<br><br>');
+    document.write('1. Отсортированный массив: [' + arrSort(arr) + ']' + '<br><br>');
+    document.write('2. Отсортированный массив: [' + arraySort(arr) + ']');
+
+</script>
+</body>
+</html>

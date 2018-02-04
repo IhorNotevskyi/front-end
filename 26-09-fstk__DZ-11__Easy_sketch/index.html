@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/send.js"></script>  <!-- sending data to the console -->
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!-- link SweetAlert -->
+    <title>Easy-sketch</title>
+</head>
+<body>
+    <div class="wrapper">
+<!--
+********** HEADER **********
+-->
+        <header>
+            <span>&lt;/&gt;</span>
+            <div>
+                <h1>NAME SURNAME</h1>
+                <h2>FRONT-END DEVELOPER</h2>
+            </div>
+            <nav>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Skills</a>
+                <a href="">Contact</a>
+            </nav>
+        </header>
+        <main>
+<!--
+********** ABOUT **********
+-->
+            <section class="about">
+                <h3>ABOUT</h3>
+                <div class="ambition">
+                    <div class="goals">
+                        <h4>Goals</h4>
+                        <p>Lorem ipsum dolor sit amet, ac erat dolor quisque magna consectetur leo, pede nec phaselluc praesent adipiscing. Nullam diam magna at mauris amet, non ut urna a commodo. Donec vivamus semper nisi velit, proin id turpis, vehicula amet nullam convallis adipiscing ut sit, sit viverra. Duis interdum eu eu sodales nec ut, non nibh accumsan eleifend. Purus ut vitae sapien dui duis dolores, porttitor tempus mascetur id ut, integer ut dignissim harum.</p>
+                    </div>
+                    <div class="person">
+                        <img src="img/person.png" alt="Person">
+                    </div>
+                    <div class="dreams">
+                        <h4>Dreams</h4>
+                        <p>Lorem ipsum dolor sit amet, ac erat dolor quisque magna consectetur leo, pede nec phaselluc praesent adipiscing. Nullam diam magna at mauris amet, non ut urna a commodo. Donec vivamus semper nisi velit, proin id turpis, vehicula amet nullam convallis adipiscing ut sit, sit viverra. Duis interdum eu eu sodales nec ut, non nibh accumsan eleifend. Purus ut vitae sapien dui duis dolores, porttitor tempus mascetur id ut, integer ut dignissim harum.</p>
+                    </div>
+                </div>
+            </section>
+<!--
+********** SKILLS **********
+-->
+            <section class="skills">
+                <h3>SKILLS</h3>
+                <div class="front-end">
+                    <div class="language">
+
+                    </div>
+                    <div class="level">
+
+                    </div>
+                </div>
+            </section>
+            <script async src="js/skills.js"></script>   <!-- add skills section -->
+<!--
+********** CONTACT **********
+-->
+            <section class="contact">
+                <h3>CONTACT</h3>
+                <form action="" method="post" name="contact">
+                    <div class="information">
+                        <label for="phone">Phone number:</label>
+                        <span>+38066-66-66-666</span>
+                        <label for="address">Email:</label>
+                        <span>mail@gmail.com</span>
+                        <label for="communications">Skype:</label>
+                        <span>mySkypeAcc</span>
+                    </div>
+                    <div class="fields">
+                        <input type="text" name="mobile" id="phone" placeholder="Mobile">
+                        <input type="email" name="email" id="address" placeholder="Email">
+                        <textarea name="skype" id="communications" cols="30" rows="10" placeholder="Send a message"></textarea>
+                        <input type="submit" name="send" value="SEND">
+                    </div>
+                </form>
+            </section>
+        </main>
+<!--
+********** FOOTER **********
+-->
+        <footer>
+            <div class="data">
+                <span>Mobile:&emsp;+38066-66-66-666</span>
+                <span>Email:&nbsp;&emsp;mail@gmail.com</span>
+                <span>Skype:&emsp;mySkypeAcc</span>
+            </div>
+            <div class="some">
+                <a href=""><img src="img/1.png" alt=""></a>
+                <a href=""><img src="img/2.png" alt=""></a>
+                <a href=""><img src="img/3.png" alt=""></a>
+                <a href=""><img src="img/4.png" alt=""></a>
+                <a href=""><img src="img/5.png" alt=""></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

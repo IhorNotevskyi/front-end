@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <script>
+        window.onload = function () {
+
+            var max = 10;
+            var min = 0;
+            var arr = [];
+
+            for (var i = 1; i <= max; i++) {
+                var number = Math.floor(Math.random() * (max - min + 1)) + min;
+                arr.push(number);
+            }
+
+            document.write('Массив: ' + ' [' + arr + ']' + '<br><br>');
+
+            (function () {
+                var result = arr[0];
+                for (var j = 1; j < arr.length; ++j) {
+                    if (arr[j] > result) {
+                        result = arr[j];
+                    }
+                }
+                document.write('1. Наибольшее значение элементов массива: ' + result + '<br><br>');
+            }());
+
+            (function () {
+                var result = Math.min.apply(null, arr);
+                document.write('2. Наименьшее значение элементов массива: ' + result + '<br><br>');
+            }());
+
+            (function () {
+                var result = 0;
+                for (var j = 0; j < arr.length; ++j) {
+                    result += arr[j];
+                }
+                document.write('3. Общая сумма значений элементов массива: ' + result + '<br><br>');
+            }());
+
+            (function () {
+                var result = 0;
+                var j = 0;
+                while (j < arr.length) {
+                    result += arr[j];
+                    ++j;
+                }
+                result = result / j;
+                document.write('4. Среднее арифметическое значений элементов массива: ' + result + '<br><br>');
+            }());
+
+            (function () {
+                var result = [];
+                for (var j = 0; j < arr.length; ++j) {
+                    if (arr[j] % 2 !== 0) {
+                        result.push(arr[j]);
+                    }
+                }
+                document.write('5. Все непарные значения элементов массива: ' + result);
+            }());
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
