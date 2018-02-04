@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #1a0dab;
+}
+
+a:hover {
+    color: #1a0dab;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #660099;
+}
+
+a:link {
+    color: #1a0dab;
+}
+
+a:active {
+    color: #1a0dab;
+}
+
+.strong {
+    font-weight: 700;
+}
+
+.wrapper {
+    margin-top: 3%;
+    position: relative;
+}
+
+/*
+
+************** Left column **************
+
+*/
+
+.left-column {
+    width: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.left-column h2 {
+    padding: 1%;
+    margin-left: 2%;
+    font: 120% Arial, sans-serif;
+}
+
+.news-wrap {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 310px;
+}
+
+.news-col1, .news-col2, .news-col3 {
+    width: 32%;
+    height: 100%;
+    display: table-column;
+    position: absolute;
+    border: 1px solid #dadada;
+    border-radius: 3px;
+    box-shadow: 0 5px 5px -5px #333;
+    z-index: 11;
+}
+
+p.news-resource {
+    height: 7%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.resource2, p:resource3 {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.news-col1 {
+    left: 0;
+    top: 0;
+}
+
+.news-col3 {
+    right: 0;
+    top: 0;
+}
+
+.news-col2 {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.news-image {
+    width: 100%;
+    height: 45%;
+}
+
+.news-title {
+    display: block;
+    width: 100%;
+    height: 35%;
+    padding: 5%;
+    font: 110% Arial, sans-serif;
+}
+
+.news-link {
+    padding: 20px;
+}
+
+.news-link p {
+    margin-top: 30px;
+}
+
+.news-source-color {
+    color: #006621;
+    font: 90% Arial, sans-serif;
+}
+
+.news-time-color {
+    color: #919191;
+    font: 90% Arial, sans-serif;
+}
+
+.link-arrow {
+    display: block;
+    margin: 2% 1% 1% 8%;
+    position: relative;
+}
+
+.arrow-right {
+    width: 3%;
+    position: absolute;
+    left: -5%;
+}
+
+/*
+
+************** Styles for articles **************
+
+*/
+.article-wrapper {
+    margin-top: 7%;
+}
+
+.article {
+    padding: 0 5% 0 3%;
+    margin-top: 4%;
+}
+
+.article-header {
+    font-size: 125%;
+}
+
+.article-link {
+    color: #006621;
+}
+
+.article-description {
+/*Чтобы влезало только 2 строки нужно установить размер шрифта и высоту равную 2 строкам (с пикселями получилось, а спроцентами нет)*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article-more-link {
+    list-style-type: none;
+}
+
+.article-more-link li {
+    display: inline-block;
+}
+
+.last-visit {
+    color: #919191;
+}
+
+.advanced-search {
+    font-size: 120%;
+    padding: 0 5% 0 3%;
+    margin-top: 6%;
+}
+
+.search-keywords {
+    padding: 0 5% 0 3%;
+    margin-top: 3%;
+}
+
+.search-keywords ul {
+    display: inline-block;
+}
+
+.search-keywords ul li {
+    list-style: none;
+    line-height: 140%;
+}
+
+.right-keywords {
+    margin-left: 6%;
+}
+
+.google-next {
+    padding: 0 5% 0 3%;
+    margin-top: 6%;
+    margin-left: 17%;
+}
+
+.google-next a img {
+    width: 55.5%;
+}
+
+.google-next ul li {
+    display: inline-block;
+    list-style: none;
+    padding-right: 1.5%;
+}
+
+.google-next ul li:first-child {
+    padding-left: 6.6%;
+}
+
+.google-next ul li:last-child {
+    padding-left: 7%;
+}
+
+.indentation {
+    margin-top: 5%;
+}
+
+/*
+
+************** Right column **************
+
+*/
+
+.right-column {
+    width: 35%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #dadada;
+    border-radius: 3px;
+    box-sizing: content-box;
+    z-index: 7;
+    margin-bottom: 10%;
+    box-shadow: 0 5px 5px -5px #333;
+}
+
+.kiev-hotel, .kiev-google-map {
+    width: 50%;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 2%;
+    z-index: 5;
+}
+
+.kiev-google-map {
+    position: relative;
+}
+
+.map-arrow {
+    width: 7%;
+    cursor: pointer;
+    position: absolute;
+    right: 1%;
+    top: .4%;
+    z-index: 15;
+
+}
+
+.show-pointer {
+    cursor: pointer;
+}
+
+.kiev-city {
+    font: 300 120% Arial, sans-serif;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.kiev-capital {
+    color: #919191;
+    font-size: 105%;
+    margin: 2% 0 4% 5%;
+}
+
+.vertical-grey {
+    background: #dadada;
+    border: .5px solid #dadada;
+}
+
+.description-kiev {
+    margin: 4%;
+}
+
+a.black-link {
+    color: #000;
+    font-weight: 700;
+}
+
+a.black-link:hover {
+    text-decoration: underline;
+}
+
+a.none-underline:hover {
+    text-decoration: none;
+}
+
+p.weather {
+    margin-top: 4%;
+    margin-bottom: 1%;
+}
+
+p.universities {
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+
+h3.kiev-events, .kiev-attraction {
+    font: 110% Arial, sans-serif;
+    margin-left: 4%;
+    padding-top: 2%;
+}
+
+a.glenn-hughes {
+     display: block;
+     margin: 4%;
+     border-bottom: 1px solid #dadada;
+ }
+
+.date, .black-underline {
+    font: 95% Arial, sans-serif;
+    color: #000;
+}
+
+.black-underline:hover {
+    text-decoration: underline;
+}
+
+.grey {
+    color: #919191;
+    font: 90% Arial, sans-serif;
+    display: block;
+    padding: 2% 0;
+}
+
+a.glenn-hughes:hover {
+    text-decoration: none;
+}
+
+a.apocaliptyca {
+    display: block;
+    margin: 4%;
+    border-bottom: 1px solid #dadada;
+}
+
+.date, .black-underline {
+    font: 95% Arial, sans-serif;
+    color: #000;
+}
+
+.black-underline:hover {
+    text-decoration: underline;
+}
+
+.grey {
+    color: #919191;
+    font: 90% Arial, sans-serif;
+    display: block;
+    padding: 2% 0;
+}
+
+a.apocaliptyca:hover {
+    text-decoration: none;
+}
+
+a.oscar-animation {
+    display: block;
+    margin: 4%;
+    border-bottom: 1px solid #dadada;
+}
+
+.date, .black-underline {
+    font: 95% Arial, sans-serif;
+    color: #000;
+}
+
+.black-underline:hover {
+    text-decoration: underline;
+}
+
+.grey {
+    color: #919191;
+    font: 90% Arial, sans-serif;
+    display: block;
+    padding: 2% 0;
+}
+
+a.oscar-animation:hover {
+    text-decoration: none;
+}
+
+.more-links {
+    margin: 4%;
+    color: #919191!important;
+    font: 90% Arial, sans-serif;
+    padding: 2% 0;
+}
+
+.kiev-attraction {
+    display: inline-block;
+    margin-top: 4%;
+    margin-right: 20%;
+}
+
+.figure {
+    width: 100%;
+    margin: 2%;
+    margin-left: .5%;
+}
+
+.figure p {
+    display: inline-block;
+    float: left;
+    font-size: 90%;
+    width: 15%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 4%;
+    text-align: justify;
+}
+
+.figure img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.figure a {
+    text-decoration: none;
+}
+
+.break-wrap {
+    white-space: nowrap;
+}
+
+.clear-figure {
+    clear: both;
+    padding-bottom: 4%;
+    border-bottom: 1px solid #dadada;
+}
+
+.footer-right-column {
+    position: relative;
+}
+
+a.kiev-details {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    margin-left: 0;
+    padding-left: 4%;
+}
+
+span.grey-details {
+    font-size: 120%;
+    color: #919191;
+    position: absolute;
+    bottom: 35%;
+    left: 27%;
+}
+
+.kiev-details img {
+    width: 20%;
+}
+
+.give-feedback {
+    content: "Оставить отзыв";
+    color: #919191;
+    font: italic 80% Arial, sans-serif;
+    position: absolute;
+    right: 4%;
+    bottom: -40%;
+}
+
+.give-feedback:hover {
+    text-decoration: underline;
+}

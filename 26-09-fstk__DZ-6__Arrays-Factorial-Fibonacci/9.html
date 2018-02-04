@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>9</title>
+    </head>
+    <body>
+        <script>
+
+            (function ()
+            {
+                var max = 10;
+                var min = 0;
+                var arr = [];
+
+                for (var i = 1; i <= max; i++) {
+                    var number =  Math.floor(Math.random() * (max - min + 1)) + min;
+                    arr.push(number);
+                }
+
+                document.write(arr + '<br><br>');
+
+                var result = arr[0];
+                for (var j = 1; j < arr.length; ++j) {
+                    if (arr[j] > result) {
+                        result = arr[j];
+                    }
+                }
+
+//              var result = Math.max.apply(null, arr);     можно и так вычислить наибольший элемент массива
+
+                document.write('Наибольший элемент массива ' + result);
+            }());
+
+        </script>
+    </body>
+</html>

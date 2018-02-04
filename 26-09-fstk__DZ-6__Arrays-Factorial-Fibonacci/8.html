@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>8</title>
+    </head>
+    <body>
+        <script>
+
+            (function ()
+            {
+                var max = 10;
+                var min = 0;
+                var arr = [];
+
+                for (var i = 1; i <= max; i++) {
+                    var number =  Math.floor(Math.random() * (max - min + 1)) + min;
+                    arr.push(number);
+                }
+
+                document.write(arr + '<br><br>');
+
+                var result = 0;
+                for (var j = 0; j < arr.length; j++) {
+                    if (j % 2 === 0) {
+                        result += arr[j];
+                    }
+                }
+
+                document.write('Сумма чисел массива, которые стоят на четных индексах, равна ' + result);
+            }());
+
+        </script>
+    </body>
+</html>

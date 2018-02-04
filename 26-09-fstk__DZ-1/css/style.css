@@ -1,8 +1,11 @@
 * {
-	width: 100%;
-	height: auto;
 	margin: 0;
 	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: auto;
 	background-color: #E0D6D6;
 }
 
