@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "my project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IhorNotevskyi"
+  },
+  "keywords": [
+    "php-academy"
+  ],
+  "author": "Ihor Notevskyi",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "node-static": "^0.7.10",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.0.1"
+  }
+}

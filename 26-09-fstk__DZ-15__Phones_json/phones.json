@@ -1,0 +1,37 @@
+[
+  {
+    "model": "Motorola MOTO G5 (XT1676)",
+    "color": "Gold",
+    "price": "5 995",
+    "imageUrl": "img/motorola_g5.jpg",
+    "description": "Экран (5\", IPS, 1920x1080)/ Qualcomm Snapdragon 430 (1.4 ГГц)/ основная камера: 13 Мп, фронтальная камера: 5 Мп/ RAM 2 ГБ/ 16 ГБ встроенной памяти + microSD/SDHC (до 128 ГБ)/ 3G/ LTE/ GPS/ поддержка 2х SIM-карт (Nano-SIM)/ Android 7.0 (Nougat) / 2800 мА*ч"
+  },
+  {
+    "model": "Motorola Moto C (XT1750)",
+    "color": "Black",
+    "price": "2 595",
+    "imageUrl": "img/motorola_c.jpg",
+    "description": "Экран (5.0\", TN, 854x480)/ MediaTek MT6737m (1.1 ГГц)/ основная камера: 5 Мп, фронтальная камера: 2 Мп/ RAM 1 ГБ/ 8 ГБ встроенной памяти + microSD/SDHC (до 32 ГБ)/ 3G/ LTE/ GPS/ поддержка 2х SIM-карт (Micro-SIM)/ Android 7.0 (Nougat) / 2350 мА*ч"
+  },
+  {
+    "model": "Motorola Moto Z2 Force (XT1789-06) Super",
+    "color": "Black",
+    "price": "17 995",
+    "imageUrl": "img/motorola_z2_force.jpg",
+    "description": "Экран (5.5\", Super AMOLED, 2560x1440)/ Qualcomm Snapdragon 835 (2.35 ГГц)/ основная камера: 12 Мп + 12 Мп, фронтальная камера: 5 Мп/ RAM 6 ГБ/ 64 ГБ встроенной памяти + microSD/SDHC (до 2 ТБ)/ 3G/ LTE/ GPS/ поддержка 2х SIM-карт (Nano-SIM)/ Android 7.1 (Nougat) / 2730 мА*ч"
+  },
+  {
+    "model": "Motorola Moto Z2 Play (XT1710-09) Fine",
+    "color": "Gold",
+    "price": "12 995",
+    "imageUrl": "img/motorola_z2_play.jpg",
+    "description": "Экран (5.5\", Super AMOLED, 1920x1080)/ Qualcomm Snapdragon 626 (2.2 ГГц)/ основная камера: 12 Мп, фронтальная камера: 5 Мп/ RAM 4 ГБ/ 64 ГБ встроенной памяти + microSD/SDHC (до 2 ТБ)/ 3G/ LTE/ GPS/ поддержка 2х SIM-карт (Nano-SIM)/ Android 7.1 (Nougat) / 3000 мА*ч"
+  },
+  {
+    "model": "Motorola Moto Z (XT1650-03) Fine",
+    "color": "Gold",
+    "price": "15 995",
+    "imageUrl": "img/motorola_z.jpg",
+    "description": "Экран (5.5\", AMOLED, 2560x1440)/ Qualcomm Snapdragon 820 (2.15 ГГц + 1.6 ГГц)/ основная камера: 13 Мп, фронтальная камера: 5 Мп/ RAM 4 ГБ/ 32 ГБ встроенной памяти + microSD/SDHC (до 2 ТБ)/ 3G/ LTE/ GPS/ GLONASS/ поддержка 2х SIM-карт (Nano-SIM)/ Android 6.0 (Marshmallow) / 2600 мА*ч"
+  }
+]

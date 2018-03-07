@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>Loader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 30px;
+        }
+
+        #loader {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+            font: 14px Arial, sans-serif;
+        }
+
+        #preloader > p {
+            display:none;
+        }
+
+        #hellopreloader {
+            display: block;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 1000px;
+            background: #8E44AD url(http://hello-site.ru//main/images/preloads/spinning-circles.svg) center center no-repeat;
+            background-size: 41px;
+        }
+
+        progress {
+            margin-top: 10px;
+            display: none;
+            background-color: #f3f3f3;
+            border: 0;
+            height: 18px;
+            border-radius: 7px;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #e1e1e1;
+        }
+        progress::-webkit-progress-value {
+            background-color: #35b922;
+        }
+
+        progress::-moz-progress-bar {
+            background-color: #35b922;
+        }
+
+        input[type="submit"] {
+            padding: 5px;
+            border-radius: 7px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+  <form action="handler.php" method="post" id="my_form" name="upload" enctype="multipart/form-data">
+      <input type="file" name="my_file" id="my_file">
+      <input type="submit" id="submit" value="Загрузить"><br>
+      <progress id="progressbar" value="0" max="100"></progress>
+      <div id="loader"></div>
+  </form>
+
+
+
+  <div id="preloader">
+      <div id="hellopreloader"></div>
+  </div>
+
+  <script>
+      function loader(html) {
+          document.getElementById('loader').innerHTML = html;
+      }
+
+      document.forms.upload.onsubmit = function() {
+          var file = this.elements.my_file.files[0];
+          if (file) {
+              upload(file);
+          }
+          return false;
+      };
+
+      function upload(file) {
+          var xhr = new XMLHttpRequest();
+
+          xhr.onload = xhr.onerror = function() {
+              var loaderer = document.getElementById('loader');
+              if (this.status == 200) {
+                  loader("Success");
+                  loaderer.style.color = '#229400';
+              } else {
+                  loader("Error " + this.status);
+                  loaderer.style.color = '#f00';
+              }
+          };
+
+          xhr.upload.onprogress = function(event) {
+              loader((event.loaded / event.total * 100).toFixed() + '%');
+          };
+
+          xhr.open("POST", "upload", true);
+          xhr.send(file);
+      }
+
+      $(function(){
+          var progressBar = $('#progressbar');
+          $('#my_form').on('submit', function(e){
+              e.preventDefault();
+              var $that = $(this),
+                  formData = new FormData($that.get(0));
+              $.ajax({
+                  url: $that.attr('action'),
+                  type: $that.attr('method'),
+                  contentType: false,
+                  processData: false,
+                  data: formData,
+                  dataType: 'json',
+                  xhr: function(){
+                      var xhr = $.ajaxSettings.xhr();
+                      xhr.upload.addEventListener('progress', function (evt) {
+                          if (evt.lengthComputable) {
+                              document.getElementsByTagName('progress')[0].style.display = 'inline-block';
+                              var percentComplete = Math.ceil(evt.loaded / evt.total * 100);
+                              progressBar.val(percentComplete);
+                          }
+                      }, false);
+                      return xhr;
+                  },
+                  success: function(json){
+                      if(json){
+                          $that.after(json);
+                      }
+                  }
+              });
+          });
+      });
+
+      var preloader = document.getElementById("hellopreloader");
+
+      function fadeOut(el) {
+          el.style.opacity = 1;
+          var interHelloPreloader = setInterval(function() {
+              el.style.opacity = el.style.opacity - 0.05;
+              if (el.style.opacity <= 0.05) {
+                  clearInterval(interHelloPreloader);
+                  preloader.style.display = "none";
+              }
+          }, 16);
+      }
+
+      window.onload = function() {
+          setTimeout(function() {
+              fadeOut(preloader);
+          }, 1000);
+      };
+
+  </script>
+
+</body>
+</html>

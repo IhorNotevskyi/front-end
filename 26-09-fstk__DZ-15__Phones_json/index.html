@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phones.json</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            font: 16px Arial, sans-serif;
+        }
+
+        button {
+            margin: 30px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .phone {
+            display: inline-block;
+            width: 200px;
+            height: 700px;
+            border: 3px solid #000;
+            margin: 20px auto 0;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        span {
+            font-weight: 700;
+        }
+
+        img {
+            margin: 10px 0;
+        }
+
+        .price {
+            padding: 10px 0;
+            font-size: 20px;
+            background: #ffb914;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="loadPhones()">Загрузить phones.json!</button>
+
+    <div class="wrapper"></div>
+
+    <script>
+        function loadPhones() {
+            var xhr = new XMLHttpRequest();
+            var button = document.getElementsByTagName('button')[0];
+
+            xhr.timeout = 30000;
+            xhr.ontimeout = function () {
+                alert('Извините, запрос превысил максимальное время');
+            };
+            xhr.open('GET', '/phones.json', true);
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+
+                button.innerHTML = 'Готово!';
+
+                if (xhr.status != 200) {
+                    alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+                } else {
+                    var phones = JSON.parse(xhr.responseText);
+                    var wrapper = document.getElementsByClassName('wrapper')[0];
+
+                    for (var i = 0; i < phones.length; i++) {
+                        var phone = document.createElement('div');
+                        phone.setAttribute('class', 'phone');
+                        wrapper.appendChild(phone);
+
+                        var model = document.createElement('span');
+                        model.innerHTML = phones[i].model;
+                        phone.appendChild(model);
+
+                        var color = document.createElement('span');
+                        color.innerHTML = ' ' + phones[i].color;
+                        phone.appendChild(color);
+
+                        var price = document.createElement('p');
+                        price.innerHTML = phones[i].price + ' грн';
+                        price.setAttribute('class', 'price');
+                        phone.appendChild(price);
+
+                        var img = document.createElement('img');
+                        img.setAttribute('src', phones[i].imageUrl);
+                        phone.appendChild(img);
+
+                        var description = document.createElement('p');
+                        description.innerHTML = phones[i].description;
+                        phone.appendChild(description);
+                    }
+                }
+            };
+
+            button.innerHTML = 'Загружаю...';
+            button.disabled = true;
+        }
+    </script>
+
+</body>
+</html>

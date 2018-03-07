@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYTimes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 30px;
+        }
+
+        img, p {
+            margin: 15px 0;
+        }
+
+        button {
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            user-select: none;
+            background: rgb(212, 75, 56);
+            padding: .7em 1.5em;
+            outline: none;
+            border: none;
+            margin-bottom: 40px;
+        }
+
+        button:hover {
+            background: rgb(232, 95, 76);
+        }
+
+        button:active {
+            background: rgb(152, 15, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="sortClick()">Sort by date</button>
+
+    <div id="demo"></div>
+
+  <script>
+      var url = 'https://api.nytimes.com/svc/mostpopular/v2/mostviewed/movies/30.json?api-key=298c0ce98619419fb9ed12e0c4f66655';
+
+      //Для сохранение исходного массива
+      var posts = [];
+      // Флаг для убывания\возрастания
+      var isDesc = false;
+
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              var data = JSON.parse(xhttp.responseText).results;
+              posts = data.map(mapToPost);
+              //Сортируем по возрастанию при первом показе
+              document.getElementById('demo').innerHTML = getPostsTemplate(sortByField(posts, 'date', isDesc));
+          }
+      };
+
+      xhttp.open("GET", url, true);
+      xhttp.send();
+
+      function sortClick() {
+          isDesc = !isDesc;
+          document.getElementById('demo').innerHTML = getPostsTemplate(sortByField(posts, 'date', isDesc));
+      }
+
+      // Сортируем массив по данному полю
+      function sortByField(array, field, isDesc) {
+          var sign = isDesc ? -1 : 1;
+
+          return array.sort(function (a, b) {
+              if (a[field] > b[field]) return sign;
+              else if (a[field] === b[field]) return 0;
+              else return -sign;
+          });
+      }
+
+      function mapToPost(post) {
+          return {
+              link: post.url,
+              img: post.media[0] ? post.media[0]["media-metadata"][2].url : null,
+              description: post.abstract,
+              title: post.title,
+              date: post.published_date,
+              date_: new Date(post.published_date) // поле нужно для правильной сортировки
+          };
+      }
+
+      function getPostsTemplate(posts) {
+          return posts.reduce(function(tmpl, post) {
+              tmpl += '<div class="post">\n' +
+                  '<h2 class="post-title">' + post.title + '</h2>\n' +
+                  '<img src=' + post.img + '>\n' +
+                  '<p class="post-description">' + post.description + '</p>\n' +
+                  '<a class="post-link" href=' + post.link + '>Read more</a>\n' +
+                  '<p class="post-date"> Publication date: ' + post.date + '</p>\n' +
+                  '<hr> <br> <br>\n' +
+                  '</div>\n';
+
+              return tmpl;
+          }, '');
+      }
+  </script>
+
+</body>
+</html>
