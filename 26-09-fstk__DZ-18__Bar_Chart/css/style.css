@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#floatTitle {
+    position: absolute;
+    display: none;
+    border: 2px solid #000;
+    padding: 7px;
+    font: italic 600 14px Arial, sans-serif;
+    border-radius: 5px;
+    color: #000;
+    background: #fff9a8;
+    z-index: 10;
+}

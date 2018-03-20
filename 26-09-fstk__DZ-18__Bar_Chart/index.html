@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/barChart.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            var chart = createBarChart([140, 86, 88, 7, 112, 45, 140, 16, 88, 66, 32, 45, 100, 150],
+                600,
+                300,
+                "green");
+
+            var container = document.getElementById("chartContainer");
+            container.appendChild(chart);
+        });
+    </script>
+</head>
+<body>
+    <div id="chartContainer"></div>
+    <div id="floatTitle"></div>
+</body>
+</html>
