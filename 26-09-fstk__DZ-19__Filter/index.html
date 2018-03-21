@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 50px;
+            font: 16px Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            display: block;
+            padding: 7px;
+            font: 16px Arial, sans-serif;
+            border: 2px solid #000;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"]:focus {
+            outline: 2px solid #00f;
+        }
+
+        table {
+            margin-top: 40px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font: 600 20px Arial, sans-serif;
+            margin-bottom: 5px;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="name">Enter name</label>
+    <input type="text" id="name" name="search" placeholder="Name search">
+
+    <table>
+        <caption>Table with data</caption>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>surname</th>
+            <th>age</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        let peoples = [
+            {
+                name: 'richard',
+                age: 24,
+                surname: 'alphonso'
+            },
+            {
+                name: 'emalee',
+                age: 33,
+                surname: 'margery'
+            },
+            {
+                name: 'danette',
+                age: 19,
+                surname: 'shell'
+            },
+            {
+                name: 'tetty',
+                age: 45,
+                surname: 'addie'
+            },
+            {
+                name: 'viona',
+                age: 31,
+                surname: 'avery'
+            }
+        ];
+
+        let input = document.querySelector('input');
+        let tableBody = document.querySelector('table tbody');
+
+        window.addEventListener('load', createTable(peoples));
+
+        let table = tableBody.innerHTML;
+
+        input.addEventListener('keyup', searchData);
+
+        function searchData() {
+            tableBody.innerHTML = '';
+
+            if (input.value === '') {
+                tableBody.innerHTML = table;
+                return;
+            }
+
+            let pattern = new RegExp(input.value, 'gi');
+            let search = peoples.filter(({name}) => name.match(pattern));
+
+            createTable(search);
+        }
+
+        function createTable(peoples) {
+            peoples.map(obj => {
+                let tr = document.createElement('tr');
+                tableBody.appendChild(tr);
+
+                let name = document.createElement('td');
+                let surname = document.createElement('td');
+                let age = document.createElement('td');
+
+                name.innerText = obj.name;
+                surname.innerText = obj.surname;
+                age.innerText = obj.age;
+
+                tr.appendChild(name);
+                tr.appendChild(surname);
+                tr.appendChild(age);
+            });
+        }
+    </script>
+
+</body>
+</html>
